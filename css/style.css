@@ -1,22 +1,90 @@
-body {
+/* リセット用のスタイル */
+* {
     margin: 0;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-    color: #2c3e50;
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* ヘッダースタイル */
+.header {
+    position: fixed;
+    left: 81px; /* paddingの代わりにheaderの左マージンとして設定 */
+    width: 100%;
+    z-index: 2;
 }
 
-/* ホバー効果を追加して動作確認 */
-h1:hover {
-    color: #3498db;
-    transform: scale(1.02);
-    transition: all 0.3s ease;
+.header-logo {
+    object-fit: contain;
+    /* padding-left: 36pxを削除 */
+}
+
+/* メインコンテナ */
+main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ヒーローセクション */
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ビデオスタイル */
+.hero-video {
+    width: 1920px;
+    height: 1077px;
+    flex-shrink: 0;
+    object-fit: cover; /* 画面いっぱいに表示 */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ロゴスタイル */
+.hero-logo {
+    position: absolute;
+    bottom: 438px;
+    left: 107px;
+    z-index: 1;
+}
+
+/* キャッチコピースタイル */
+.hero-catch {
+    position: absolute;
+    bottom: 122px; /* topをbottomに変更し、値を122pxに */
+    left: 107px;
+    z-index: 1;
+    color: #DDD;
+    font-family: "Noto Serif JP", serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 28.16px;
+    mix-blend-mode: screen;
+}
+
+.hero-catch p {
+}
+
+.hero-catch p:last-child {
+    margin-bottom: 0;
+}
+
+/* 説明文スタイル */
+.hero-description {
+    position: absolute;
+    bottom: 62px;
+    left: 107px;
+    z-index: 1;
+    color: #FFF;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    letter-spacing: 3.04px;
 }

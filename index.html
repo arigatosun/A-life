@@ -1,12 +1,39 @@
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-life</title>
+    <title>A-LIFE</title>
+    <!-- Google Fonts の追加（Noto Sansを追加） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&family=Noto+Serif+JP:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
+
 <body>
-    <h1>Hello, Figma!</h1>
+    <header class="header">
+        <img src="./assets/header-logo.png" alt="A-LIFE" class="header-logo">
+    </header>
+    <main>
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="./assets/keymov.mp4" type="video/mp4">
+            </video>
+            <img src="./assets/topALifelogo.png" alt="A-LIFE" class="hero-logo">
+            <div class="hero-catch">
+                <p>最も安心できる</p>
+                <p>コーティング品質を</p>
+                <p>全国へ</p>
+            </div>
+            <!-- 説明文の追加 -->
+            <p class="hero-description">
+                お客様、車、社会、組織に持続可能な「輝き」をテーマに磨き続け、学び続け、歓びを追求し続け永遠のパートナーになる。
+            </p>
+        </section>
+    </main>
 </body>
 </html>
