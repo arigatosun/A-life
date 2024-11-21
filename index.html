@@ -1,39 +1,129 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A-LIFE</title>
-    <!-- Google Fonts の追加（Noto Sansを追加） -->
+    <!-- Google Fonts の追加（Noto SansとNoto Serif JP） -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- フォントの読み込み -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&family=Noto+Serif+JP:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400&display=swap" rel="stylesheet">
+    <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
 </head>
-
 <body>
+    <!-- ヘッダー開始 -->
     <header class="header">
-        <img src="./assets/header-logo.png" alt="A-LIFE" class="header-logo">
+        <!-- ナビゲーションメニュー -->
+        <nav class="header-nav">
+            <!-- 背景オーバーレイ -->
+            <div class="background-overlay"></div>
+            <!-- メニューリスト -->
+            <ul class="header-menu">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">サービス</a></li>
+                <li><a href="#">施工事例</a></li>
+                <li><a href="#">コラム</a></li>
+                <li><a href="#">採用情報</a></li>
+                <li><a href="#">会社概要</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+                <!-- インスタグラムリンク -->
+                <li class="instagram-link">
+                    <a href="https://www.instagram.com/your-account" target="_blank">
+                        <img src="./assets/insta-icon.svg" alt="Instagram" class="insta-icon">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- ヘッダーコンテンツ -->
+        <div class="header-content">
+            <!-- ロゴ画像 -->
+            <img src="./assets/header-logo.png" alt="A-LIFE" class="header-logo default-logo">
+            <!-- ハンバーガーメニュー用ロゴ -->
+            <img src="./assets/hamburger-logo.svg" alt="A-LIFE" class="header-logo hamburger-logo">
+            <!-- ハンバーガーメニューのボタン -->
+            <button class="hamburger-menu" aria-label="メニュー">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </header>
+    <!-- メインコンテンツ開始 -->
     <main>
+        <!-- ヒーローセクション -->
         <section class="hero">
+            <!-- 背景動画 -->
             <video class="hero-video" autoplay muted loop playsinline>
                 <source src="./assets/keymov.mp4" type="video/mp4">
             </video>
+            <!-- ロゴ画像 -->
             <img src="./assets/topALifelogo.png" alt="A-LIFE" class="hero-logo">
+            <!-- キャッチコピー -->
             <div class="hero-catch">
                 <p>最も安心できる</p>
                 <p>コーティング品質を</p>
                 <p>全国へ</p>
             </div>
-            <!-- 説明文の追加 -->
+            <!-- 説明文 -->
             <p class="hero-description">
                 お客様、車、社会、組織に持続可能な「輝き」をテーマに磨き続け、学び続け、歓びを追求し続け永遠のパートナーになる。
             </p>
         </section>
+
+       
+        <section class="service">
+                <div class="section-header">
+                    <div class="title-container">
+                        <h2 class="section-title">SERVICE</h2>
+                        <p class="section-subtitle">サービス</p>
+                    </div>
+                </div>
+
+                <img src="./assets/service-image.png" alt="サービス" class="service-image">
+                <img src="./assets/service-mobile-image.png" alt="サービス" class="service-mobile-image">
+
+                <ul class="service-list">
+                    <li>ガラスコーディング</li>
+                    <li>カーフィルム</li>
+                    <li>パーツ取り付け</li>
+                    <li>車買取</li>
+                    <li>車販売</li>
+                    <li>コーディング育成</li>
+                </ul>
+
+                <a href="#" class="service-detail-btn">
+                    <span>サービス詳細を見る</span>
+                    <img src="./assets/saisei-icon.png" alt="サービス詳細" class="btn-icon">
+                </a>
+
+        </section>
+
+        <section class="reason">
+            <div class="section-header reason-header">
+                <div class="title-container">
+                    <h2 class="reason-title">REASON</h2>
+                </div>
+            </div>
+        </section>
+        
+
+
     </main>
+    <!-- ハンバーガーメニューのスクリプト -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const nav = document.querySelector('.header-nav');
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

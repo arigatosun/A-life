@@ -1,24 +1,91 @@
-/* リセット用のスタイル */
+/* style.css */
+/* リセットスタイル */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ヘッダースタイル */
+/* デスクトップ用スタイル */
+
+/* Instagramリンクをデフォルトで非表示 */
+.instagram-link {
+    display: none;
+}
+
+/* ハンバーガーメニューはデスクトップでは非表示 */
+.hamburger-menu {
+    display: none;
+}
+
+/* ヘッダーのスタイル */
 .header {
     position: fixed;
-    left: 81px; /* paddingの代わりにheaderの左マージンとして設定 */
-    width: 100%;
+    left: 81px;
+    width: calc(100% - 81px);
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* ヘッダーロゴのスタイル */
 .header-logo {
     object-fit: contain;
-    /* padding-left: 36pxを削除 */
 }
 
-/* メインコンテナ */
+/* ハンバーガーメニュー用ロゴはデフォルトで非表示 */
+.hamburger-logo {
+    display: none;
+}
+
+/* ヘッダー内コンテンツのレイアウト */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    order: 1;
+}
+
+/* ナビゲーションメニュー */
+.header-nav {
+    display: block;
+    position: static;
+    order: 2;
+    padding-right: 217px;
+}
+
+/* メニューリストのスタイル */
+.header-menu {
+    display: flex;
+    list-style: none;
+}
+
+/* メニュー項目のスタイル */
+.header-menu li {
+    margin-right: 50px;
+}
+
+/* 最後のメニュー項目のマージンを削除 */
+.header-menu li:last-child {
+    margin-right: 0;
+}
+
+/* メニューテキストのスタイル */
+.header-menu a {
+    color: #FFF;
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ホバー時の効果 */
+.header-menu a:hover {
+    opacity: 0.8;
+}
+
+/* メインコンテンツ */
 main {
     width: 100%;
     min-height: 100vh;
@@ -32,18 +99,17 @@ main {
     overflow: hidden;
 }
 
-/* ビデオスタイル */
+/* ヒーローセクションのビデオ */
 .hero-video {
     width: 1920px;
     height: 1077px;
-    flex-shrink: 0;
-    object-fit: cover; /* 画面いっぱいに表示 */
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
 }
 
-/* ロゴスタイル */
+/* ヒーローセクションのロゴ */
 .hero-logo {
     position: absolute;
     bottom: 438px;
@@ -51,30 +117,21 @@ main {
     z-index: 1;
 }
 
-/* キャッチコピースタイル */
+/* キャッチコピーのスタイル */
 .hero-catch {
     position: absolute;
-    bottom: 122px; /* topをbottomに変更し、値を122pxに */
+    bottom: 122px;
     left: 107px;
     z-index: 1;
     color: #DDD;
     font-family: "Noto Serif JP", serif;
     font-size: 64px;
-    font-style: normal;
     font-weight: 900;
-    line-height: normal;
     letter-spacing: 28.16px;
     mix-blend-mode: screen;
 }
 
-.hero-catch p {
-}
-
-.hero-catch p:last-child {
-    margin-bottom: 0;
-}
-
-/* 説明文スタイル */
+/* 説明文のスタイル */
 .hero-description {
     position: absolute;
     bottom: 62px;
@@ -83,8 +140,153 @@ main {
     color: #FFF;
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 100;
-    line-height: normal;
     letter-spacing: 3.04px;
+}
+
+/* セクション共通のスタイル */
+.section-header {
+    display: flex;
+    margin-top:200px;
+}
+
+.title-container {
+    position: relative; /* 子要素の絶対位置指定の基準点となる */
+    display: inline-block; /* コンテンツに合わせてサイズ調整 */
+    z-index: 2; /* 最前面 */
+}
+
+/* リストと詳細ボタンを画像の後ろに配置 */
+.service-list, .service-detail-btn {
+    position: relative;
+    z-index: 0; /* 画像より後ろ */
+}
+
+.section-title {
+    color: #797979;
+    font-family: 'Afacad', sans-serif;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.section-subtitle {
+    position: absolute; /* タイトルに対して絶対位置指定 */
+    color: #797979;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 7.04px;
+   /* 位置調整用のプロパティ */
+   bottom: 30px; /* 下からの位置調整 */
+   left: 10px;   /* 左からの位置調整 */
+   transform: none; /* 中央揃えの解除 */
+}
+/* サービスセクション固有のスタイル */
+.service {
+    padding-left:110px;
+    position: relative; /* 追加 */
+    
+}
+
+/* サービス画像のスタイル */
+.service-image {
+    position: absolute;
+    top: -44px;
+    left: 620px;
+    z-index: 1; /* タイトルより後ろ、コンテンツより前面 */
+}
+
+.margin{
+    margin-top: 286px; /* セクション間の余白 */
+}
+
+/* サービスリストのスタイル */
+.service-list {
+    list-style: none;
+    margin-top: 51px; /* 最初の要素の上マージン */
+}
+
+.service-list li {
+    color: #5E5E5E;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 21px; /* リスト項目間のマージン */
+    margin-left:10px;
+}
+
+/* 最後の項目のマージンを削除 */
+.service-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* サービス詳細ボタンのスタイル */
+.service-detail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 289px;
+    height: 56px;
+    margin-top: 77px;
+    border-radius: 43px;
+    border: 1px solid #A1BFD5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.service-detail-btn span {
+    color: #A1BFD5;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 4.8px;
+}
+
+.service-detail-btn .btn-icon {
+    margin-left: 12px;
+}
+
+/* ホバー時のエフェクト（オプション） */
+.service-detail-btn:hover {
+    opacity: 0.8;
+}
+
+.service-mobile-image {
+    display: none;
+}
+
+/* REASONセクションのスタイル */
+.reason {
+    position: relative;
+    margin-top: 200px; /* serviceセクションとの間隔 */
+}
+
+.reason-header {
+    margin-left: 1306px; /* 左からの位置指定 */
+}
+
+.reason-title {
+    color: #797979;
+    text-align: right;
+    font-family: Afacad;
+    font-size: 132px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.96px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    mix-blend-mode: difference;
+    margin: 0;
 }
