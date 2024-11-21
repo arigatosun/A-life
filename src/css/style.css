@@ -1,0 +1,587 @@
+/* style.css */
+/* リセットスタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* デスクトップ用スタイル */
+
+/* Instagramリンクをデフォルトで非表示 */
+.instagram-link {
+    display: none;
+}
+
+/* ハンバーガーメニューはデスクトップでは非表示 */
+.hamburger-menu {
+    display: none;
+}
+
+/* ヘッダーのスタイル */
+.header {
+    position: fixed;
+    left: 81px;
+    width: calc(100% - 81px);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ヘッダーロゴのスタイル */
+.header-logo {
+    object-fit: contain;
+}
+
+/* ハンバーガーメニュー用ロゴはデフォルトで非表示 */
+.hamburger-logo {
+    display: none;
+}
+
+/* ヘッダー内コンテンツのレイアウト */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    order: 1;
+}
+
+/* ナビゲーションメニュー */
+.header-nav {
+    display: block;
+    position: static;
+    order: 2;
+    padding-right: 217px;
+}
+
+/* メニューリストのスタイル */
+.header-menu {
+    display: flex;
+    list-style: none;
+}
+
+/* メニュー項目のスタイル */
+.header-menu li {
+    margin-right: 50px;
+}
+
+/* 最後のメニュー項目のマージンを削除 */
+.header-menu li:last-child {
+    margin-right: 0;
+}
+
+/* メニューテキストのスタイル */
+.header-menu a {
+    color: #FFF;
+    font-family: "Noto Sans JP";
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ホバー時の効果 */
+.header-menu a:hover {
+    opacity: 0.8;
+}
+
+/* メインコンテンツ */
+main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ヒーローセクション */
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ヒーローセクションのビデオ */
+.hero-video {
+    width: 1920px;
+    height: 1077px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ヒーローセクションのロゴ */
+.hero-logo {
+    position: absolute;
+    bottom: 438px;
+    left: 107px;
+    z-index: 1;
+}
+
+/* キャッチコピーのスタイル */
+.hero-catch {
+    position: absolute;
+    bottom: 122px;
+    left: 107px;
+    z-index: 1;
+    color: #DDD;
+    font-family: "Noto Serif JP", serif;
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: 28.16px;
+    mix-blend-mode: screen;
+}
+
+/* 説明文のスタイル */
+.hero-description {
+    position: absolute;
+    bottom: 62px;
+    left: 107px;
+    z-index: 1;
+    color: #FFF;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 3.04px;
+}
+
+/* セクション共通のスタイル */
+.section-header {
+    display: flex;
+}
+
+.title-container {
+    position: relative; /* 子要素の絶対位置指定の基準点となる */
+    display: inline-block; /* コンテンツに合わせてサイズ調整 */
+    z-index: 2; /* 最前面 */
+}
+
+/* リストと詳細ボタンを画像の後ろに配置 */
+.service-list, .service-detail-btn {
+    position: relative;
+    z-index: 0; /* 画像より後ろ */
+}
+
+.section-title {
+    color: #797979;
+    font-family: 'Afacad', sans-serif;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.section-subtitle {
+    position: absolute; /* タイトルに対して絶対位置指定 */
+    color: #797979;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 7.04px;
+   /* 位置調整用のプロパティ */
+   bottom: 30px; /* 下からの位置調整 */
+   left: 10px;   /* 左からの位置調整 */
+   transform: none; /* 中央揃えの解除 */
+}
+/* サービスセクション固有のスタイル */
+.service {
+    padding-left:110px;
+    position: relative; /* 追加 */
+    margin-top: 200px;
+    
+}
+
+/* サービス画像のスタイル */
+.service-image {
+    position: absolute;
+    top: -44px;
+    left: 620px;
+    z-index: 1; /* タイトルより後ろ、コンテンツより前面 */
+    width: auto; /* 固定幅を解除 */
+    height: auto; /* 固定高さを解除 */
+    max-width: 1300px; /* 最大幅を設定 */
+    transition: all 0.3s ease; /* スムーズな変化のためのトランジション */
+}
+
+.margin{
+    margin-top: 286px; /* セクション間の余白 */
+}
+
+/* サービスリストのスタイル */
+.service-list {
+    list-style: none;
+    margin-top: 51px; /* 最初の要素の上マージン */
+}
+
+.service-list li {
+    color: #5E5E5E;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 21px; /* リスト項目間のマージン */
+    margin-left:10px;
+}
+
+/* 最後の項目のマージンを削除 */
+.service-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* サービス詳細ボタンのスタイル */
+.service-detail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 289px;
+    height: 56px;
+    margin-top: 77px;
+    border-radius: 43px;
+    border: 1px solid #A1BFD5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.service-detail-btn span {
+    color: #A1BFD5;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 4.8px;
+}
+
+.service-detail-btn .btn-icon {
+    margin-left: 12px;
+}
+
+/* ホバー時のエフェクト（オプション） */
+.service-detail-btn:hover {
+    opacity: 0.8;
+}
+
+.service-mobile-image {
+    display: none;
+}
+
+/* REASONセクションのスタイル */
+.reason {
+    position: relative;
+    margin-top: 360px; /* serviceセクションとの間隔 */
+    width: 100%;
+    background: #EDF1F2;  /* 背景色を追加 */
+}
+
+.reason-header {
+    margin-left: auto; /* 左マージンを自動調整に変更 */
+    padding-right: calc(100px + 2vw); /* 右側の余白を相対値に */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* 右寄せに変更 */
+}
+
+.reason-title {
+    color: #797979;
+    text-align: right;
+    font-family: Afacad;
+    font-size: 132px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.96px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    mix-blend-mode: difference;
+    margin-top:100px;
+}
+
+/* 累計施工台数のスタイル */
+.installation-count {
+    color: #797979;
+    font-family: "Noto Serif JP";
+    text-align: right;
+    width: auto; /* 固定幅を解除 */
+    max-width: 610px; /* 最大幅を設定 */
+    margin-left: auto; /* 左マージンを自動調整 */
+    margin-right: calc(100px + 2vw); /* 右マージンを相対値に */
+}
+
+/* "累計施工台数"のスタイル */
+.installation-count .count {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 12.6px;
+}
+
+/* "18,000"のスタイル */
+.installation-count .number {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: 1.92px;
+}
+
+/* "台以上"のスタイル */
+.installation-count .unit {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 12.6px;
+}
+
+/* 説明文のスタイル */
+.reason-description {
+    color: #797979;
+    text-align: right;
+    font-family: "Noto Serif JP";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 55px; /* 250% */
+    letter-spacing: 5.94px;
+    margin-top: 40px; /* 上の要素との間隔を調整 */
+    margin-right: 105px; /* 右側の余白を調整 */
+}
+
+.reason-description p {
+    margin: 0; /* 段落間のデフォルトマージンを削除 */
+}
+.reason-description p:nth-child(4) {
+    padding-right: 1.2em; /* 1文字分のスペース */
+}
+
+/* 背景テキストのスタイル */
+.reason-background-text {
+    color: #DFE6E8;
+    font-family: Afacad;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 131.927%;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    mix-blend-mode: overlay;
+    margin-top: 27px;
+    text-align: right;
+    width: 100%; /* 幅を100%に設定 */
+    padding: 0; /* パディングを削除 */
+    margin-left: 0; /* 左マージンを削除 */
+    margin-right: 0; /* 右マージンを削除 */
+    overflow: hidden; /* はみ出した部分を隠す */
+    white-space: nowrap; /* テキストの折り返しを防ぐ */
+}
+
+/* REASONイメージのスタイル */
+.reason-image {
+    position: absolute;
+    top: -92px;
+    left: 92px;
+    z-index: 1; /* タイトル(z-index: 2)より後ろ、他のコンテンツより前面 */
+    width: auto;
+    height: auto;
+}
+
+/* 他のコンテンツが画像の後ろに表示されるように */
+.installation-count,
+.reason-description,
+.reason-background-text {
+    position: relative;
+    z-index: 0;
+}
+
+.reason-overlay-text {
+    position: absolute;
+    top: 140px;
+    left: 213px;
+    z-index: 2;
+}
+
+.reason-overlay-text p {
+    color: #FFF;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.30);
+    font-family: "Noto Serif JP";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110px;
+    letter-spacing: 25.6px;
+    margin: 0;
+}
+
+.reason-overlay-text .company-name {
+    color: #475C71;
+    margin-right: 25.6px; /* 文字間隔を調整 */
+}
+
+
+.reason-white-box {
+    position: absolute;
+    top: 258px;  /* これは適宜調整してください */
+    left: 0px; /* これは適宜調整してください */
+    width: 549px;
+    height: 102px;
+    background: #FFF;
+    z-index: 1; /* 画像(z-index: 1)と同じか、少し大きい値 */
+}
+
+.works {
+    padding-left: 110px;
+    position: relative;
+    margin-top:100px;
+}
+
+.works-logo {
+    position: absolute;
+    top: -40px;
+    right: 75px;
+    z-index: 3; /* 最前面に表示 */
+}
+
+.works-description {
+    color: #5E5E5E;
+    font-family: "Noto Sans JP";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 3.6px;
+    margin-top: 24px;
+}
+
+.works-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    width: 100%;
+    height: 648px; /* ギャラリーの高さを固定 */
+    padding-right: 100px;
+}
+
+.gallery-main {
+    width: 33.33%; /* メイン画像を左1/3に配置 */
+    height: 100%; /* 親要素の高さに合わせる */
+}
+
+.gallery-grid {
+    width: 66.66%; /* グリッド部分を右2/3に配置 */
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%; /* 親要素の高さに合わせる */
+}
+
+.gallery-main-image,
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item {
+    width: 33.33%; /* 3列グリッド */
+    height: 50%; /* 2行グリッド */
+}
+
+.column {
+    padding-left: 110px;
+    position: relative;
+    margin-top: 100px;
+}
+
+.column-slider {
+    position: relative;
+    margin-top: 40px;
+    overflow: visible; /* visible に変更 */
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.slider-arrow.prev { left: 20px; }
+.slider-arrow.next { right: 20px; }
+
+.column-articles {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.column-card {
+    flex-shrink: 0;
+    display: flex;
+   flex-direction: column;
+   justify-content: flex-end; /* 下揃えにする */
+   height: 650px; /* カードの高さを固定 */
+}
+
+.column-card.main .column-image {
+    width: 628px;
+    height: 476px;
+}
+
+.column-card:not(.main) .column-image {
+    width: 625px;
+    height: 292px;
+}
+
+.column-content {
+    margin-top: 20px;
+}
+
+.column-title {
+    color: #6B7988;
+    font-family: "Noto Sans JP";
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 4.4px;
+    margin-bottom: 15px;
+}
+
+.column-text {
+    color: #6B7988;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+    margin-bottom: 15px;
+}
+
+.column-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.column-date {
+    color: #6B7988;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 3.2px;
+}
+
+.column-category {
+    display: inline-block;
+    width: 156px;
+    height: 23px;
+    background: rgba(107, 121, 136, 0.3);
+    color: #FFF;
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 3.2px;
+    line-height: 23px;
+}
