@@ -147,7 +147,7 @@ main {
 /* セクション共通のスタイル */
 .section-header {
     display: flex;
-    margin-top:200px;
+    margin-top:429px;
 }
 
 .title-container {
@@ -201,6 +201,10 @@ main {
     top: -44px;
     left: 620px;
     z-index: 1; /* タイトルより後ろ、コンテンツより前面 */
+    width: auto; /* 固定幅を解除 */
+    height: auto; /* 固定高さを解除 */
+    max-width: 1300px; /* 最大幅を設定 */
+    transition: all 0.3s ease; /* スムーズな変化のためのトランジション */
 }
 
 .margin{
@@ -270,10 +274,16 @@ main {
 .reason {
     position: relative;
     margin-top: 200px; /* serviceセクションとの間隔 */
+    width: 100%;
+    background: #EDF1F2;  /* 背景色を追加 */
 }
 
 .reason-header {
-    margin-left: 1306px; /* 左からの位置指定 */
+    margin-left: auto; /* 左マージンを自動調整に変更 */
+    padding-right: calc(100px + 2vw); /* 右側の余白を相対値に */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* 右寄せに変更 */
 }
 
 .reason-title {
@@ -288,5 +298,132 @@ main {
     text-transform: uppercase;
     opacity: 0.5;
     mix-blend-mode: difference;
+    margin-top:100px;
+}
+
+/* 累計施工台数のスタイル */
+.installation-count {
+    color: #797979;
+    font-family: "Noto Serif JP";
+    text-align: right;
+    width: auto; /* 固定幅を解除 */
+    max-width: 610px; /* 最大幅を設定 */
+    margin-left: auto; /* 左マージンを自動調整 */
+    margin-right: calc(100px + 2vw); /* 右マージンを相対値に */
+}
+
+/* "累計施工台数"のスタイル */
+.installation-count .count {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 12.6px;
+}
+
+/* "18,000"のスタイル */
+.installation-count .number {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: 1.92px;
+}
+
+/* "台以上"のスタイル */
+.installation-count .unit {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 12.6px;
+}
+
+/* 説明文のスタイル */
+.reason-description {
+    color: #797979;
+    text-align: right;
+    font-family: "Noto Serif JP";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 55px; /* 250% */
+    letter-spacing: 5.94px;
+    margin-top: 40px; /* 上の要素との間隔を調整 */
+    margin-right: 105px; /* 右側の余白を調整 */
+}
+
+.reason-description p {
+    margin: 0; /* 段落間のデフォルトマージンを削除 */
+}
+.reason-description p:nth-child(4) {
+    padding-right: 1.2em; /* 1文字分のスペース */
+}
+
+/* 背景テキストのスタイル */
+.reason-background-text {
+    color: #DFE6E8;
+    font-family: Afacad;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 131.927%;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    mix-blend-mode: overlay;
+    margin-top: 60px;
+    text-align: right;
+    width: 100%; /* 幅を100%に設定 */
+    padding: 0; /* パディングを削除 */
+    margin-left: 0; /* 左マージンを削除 */
+    margin-right: 0; /* 右マージンを削除 */
+    overflow: hidden; /* はみ出した部分を隠す */
+    white-space: nowrap; /* テキストの折り返しを防ぐ */
+}
+
+/* REASONイメージのスタイル */
+.reason-image {
+    position: absolute;
+    top: -92px;
+    left: 92px;
+    z-index: 1; /* タイトル(z-index: 2)より後ろ、他のコンテンツより前面 */
+    width: auto;
+    height: auto;
+}
+
+/* 他のコンテンツが画像の後ろに表示されるように */
+.installation-count,
+.reason-description,
+.reason-background-text {
+    position: relative;
+    z-index: 0;
+}
+
+.reason-overlay-text {
+    position: absolute;
+    top: 140px;
+    left: 213px;
+    z-index: 2;
+}
+
+.reason-overlay-text p {
+    color: #FFF;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.30);
+    font-family: "Noto Serif JP";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110px;
+    letter-spacing: 25.6px;
     margin: 0;
+}
+
+.reason-overlay-text .company-name {
+    color: #475C71;
+    margin-right: 25.6px; /* 文字間隔を調整 */
+}
+
+
+.reason-white-box {
+    position: absolute;
+    top: 258px;  /* これは適宜調整してください */
+    left: 0px; /* これは適宜調整してください */
+    width: 549px;
+    height: 102px;
+    background: #FFF;
+    z-index: 1; /* 画像(z-index: 1)と同じか、少し大きい値 */
 }
