@@ -147,7 +147,6 @@ main {
 /* セクション共通のスタイル */
 .section-header {
     display: flex;
-    margin-top:429px;
 }
 
 .title-container {
@@ -192,6 +191,7 @@ main {
 .service {
     padding-left:110px;
     position: relative; /* 追加 */
+    margin-top: 200px;
     
 }
 
@@ -273,7 +273,7 @@ main {
 /* REASONセクションのスタイル */
 .reason {
     position: relative;
-    margin-top: 200px; /* serviceセクションとの間隔 */
+    margin-top: 360px; /* serviceセクションとの間隔 */
     width: 100%;
     background: #EDF1F2;  /* 背景色を追加 */
 }
@@ -365,7 +365,7 @@ main {
     letter-spacing: 2.88px;
     text-transform: uppercase;
     mix-blend-mode: overlay;
-    margin-top: 60px;
+    margin-top: 27px;
     text-align: right;
     width: 100%; /* 幅を100%に設定 */
     padding: 0; /* パディングを削除 */
@@ -426,4 +426,63 @@ main {
     height: 102px;
     background: #FFF;
     z-index: 1; /* 画像(z-index: 1)と同じか、少し大きい値 */
+}
+
+.works {
+    padding-left: 110px;
+    position: relative;
+    margin-top:100px;
+}
+
+.works-logo {
+    position: absolute;
+    top: -40px;
+    right: 75px;
+    z-index: 3; /* 最前面に表示 */
+}
+
+.works-description {
+    color: #5E5E5E;
+    font-family: "Noto Sans JP";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 3.6px;
+    margin-top: 24px;
+}
+
+.works-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    width: 100%;
+    height: 648px; /* ギャラリーの高さを固定 */
+    padding-right: 100px;
+    margin-bottom:300px;
+}
+
+.gallery-main {
+    width: 33.33%; /* メイン画像を左1/3に配置 */
+    height: 100%; /* 親要素の高さに合わせる */
+}
+
+.gallery-grid {
+    width: 66.66%; /* グリッド部分を右2/3に配置 */
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%; /* 親要素の高さに合わせる */
+}
+
+.gallery-main-image,
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item {
+    width: 33.33%; /* 3列グリッド */
+    height: 50%; /* 2行グリッド */
 }

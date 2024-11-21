@@ -493,6 +493,54 @@
         z-index: 1;
     }
 
+    .works-description {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 2.8px;
+        br {
+            display: none; /* モバイル表示時は改行を解除 */
+        }
+        padding: 0 24px;
+    }
+
+    .service{
+        margin-top:0px;
+    }
+
+    .works-gallery {
+        flex-direction: column;
+        height: auto;
+        padding-right: 0;
+        
+    }
+
+    .gallery-main {
+        width: 100%;
+        padding: 0 24px;
+        height: auto;
+    }
+
+    .gallery-grid {
+        width: 100%;
+        padding: 0 24px;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .gallery-item {
+        width: 50%; /* 2列グリッド */
+        height: auto; /* 高さは画像に合わせる */
+    }
+
+    /* 画像の順序を調整 */
+    .gallery-item:nth-child(4) {
+        order: 3;
+    }
+    .gallery-item:nth-child(5) {
+        order: 2;
+    }
+
 
 
 }
