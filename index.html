@@ -165,7 +165,126 @@
             </div>
             
         </section>
-        
+
+        <section class="column">
+            <div class="section-header">
+                <div class="title-container">
+                    <h2 class="section-title">COLUMN</h2>
+                    <p class="section-subtitle">コラム</p>
+                </div>
+            </div>
+         
+            <div class="column-slider">
+                <button class="slider-arrow prev">
+                    <img src="./assets/left.svg" alt="Previous" class="arrow-icon">
+                </button>
+                <button class="slider-arrow next">
+                    <img src="./assets/right.svg" alt="Next" class="arrow-icon">
+                </button>
+         
+                <div class="column-articles">
+                   
+         
+                    <!-- その他の記事カード -->
+                    <article class="column-card sub">
+                        <div class="column-image" style="background-color: #EEE; display: flex; align-items: center; justify-content: center;">
+                            <span>サブ記事画像1</span>  
+                        </div>
+                        <div class="column-content">
+                            <h3 class="column-title">コラムのタイトルが入ります</h3>
+                            <p class="column-text"></p>
+                            <div class="column-meta">
+                                <time class="column-date">2024.00/00</time>
+                                <span class="column-category">コラムカテゴリ</span>
+                            </div>
+                        </div>
+                    </article>
+         
+                    <article class="column-card sub">
+                        <div class="column-image" style="background-color: #EEE; display: flex; align-items: center; justify-content: center;">
+                            <span>サブ記事画像2</span>
+                        </div>
+                        <div class="column-content">
+                            <h3 class="column-title">コラムのタイトルが入ります</h3>
+                            <p class="column-text"></p>
+                            <div class="column-meta">
+                                <time class="column-date">2024.00/00</time>
+                                <span class="column-category">コラムカテゴリ</span>
+                            </div>
+                        </div>
+                    </article>
+         
+                    <article class="column-card sub">
+                        <div class="column-image" style="background-color: #EEE; display: flex; align-items: center; justify-content: center;">
+                            <span>サブ記事画像3</span>
+                        </div>
+                        <div class="column-content">
+                            <h3 class="column-title">コラムのタイトルが入ります</h3>
+                            <p class="column-text"></p>
+                            <div class="column-meta">
+                                <time class="column-date">2024.00/00</time>
+                                <span class="column-category">コラムカテゴリ</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="column-card sub">
+                        <div class="column-image" style="background-color: #EEE; display: flex; align-items: center; justify-content: center;">
+                            <span>サブ記事画像4</span>
+                        </div>
+                        <div class="column-content">
+                            <h3 class="column-title">コラムのタイトルが入ります</h3>
+                            <p class="column-text"></p>
+                            <div class="column-meta">
+                                <time class="column-date">2024.00/00</time>
+                                <span class="column-category">コラムカテゴリ</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+         </section>
+
+         <section class="recruit">
+            <div class="section-header">
+                <div class="title-container">
+                    <h2 class="section-title">RECRUIT</h2>
+                    <p class="section-subtitle">採用情報</p>
+                </div>
+            </div>
+            <p class="recruit-description">
+                未経験から働けるコーティングスタッフを募集しております。<br>
+                全国でお取引のディーラーがあるため、車好きの方は気軽にお問い合わせください。
+            </p>
+            <div class="recruit-white-box"></div>
+            
+            <div class="recruit-overlay-text">
+                <p>ここのエリアに、</p>
+                <p><span class="main-copy">採用のメインコピー</span>が</p>
+                <p>入ります。</p>
+            </div>
+
+             <!-- モバイル版用の要素（新規追加） -->
+            <div class="recruit-mobile-content">
+                <div class="recruit-mobile-overlay-text">
+                    <p>ここのエリアに</p>
+                    <p><span class="main-copy">採用のコピー</span>が</p>
+                    <p>入ります。</p>
+                </div>
+                <!-- 白いボックスを3つ追加 -->
+                <div class="recruit-mobile-white-box"></div>
+                <div class="recruit-mobile-white-box"></div>
+                <div class="recruit-mobile-white-box"></div>
+            </div>
+
+            <!-- 採用詳細ボタンを追加 -->
+            <a href="/recruit" class="recruit-detail-btn">
+                <img src="./assets/saiyou-detail-button.png" alt="採用詳細を見る" class="recruit-btn-desktop">
+                <img src="./assets/saiyou-detail-button-mobile.png" alt="採用詳細を見る" class="recruit-btn-mobile">
+            </a>
+            <img src="./assets/Recruit-images.png" alt="採用情報" class="recruit-image">
+            <img src="./assets/Recruit-images-mobile.png" alt="採用情報" class="recruit-image-mobile">
+        </section>
 
 
     </main>
@@ -181,5 +300,72 @@
             });
         });
     </script>
+
+     <!-- コラムスライダーのスクリプト -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+           const slider = document.querySelector('.column-articles');
+           const prevBtn = document.querySelector('.slider-arrow.prev');
+           const nextBtn = document.querySelector('.slider-arrow.next');
+           const cards = document.querySelectorAll('.column-card');
+           let currentIndex = 0;
+        
+           // スライダーの初期化
+           function initializeSlider() {
+               // 元の記事を3セット複製してループ用コンテンツを作成
+               for (let i = 0; i < 2; i++) {
+                   cards.forEach(card => {
+                       const clone = card.cloneNode(true);
+                       slider.appendChild(clone);
+                   });
+               }
+        
+               // 最初の記事をメインに設定
+               cards[0].classList.add('main');
+               
+               // スライダーの位置を中央セットに設定
+               const offset = cards[0].offsetLeft;
+               slider.style.transform = `translateX(-${offset}px)`;
+           }
+        
+           function updateSlider(direction) {
+               const allCards = document.querySelectorAll('.column-card');
+               const totalCards = allCards.length;
+               
+               // 次のインデックスを計算
+               currentIndex = (currentIndex + direction + totalCards) % totalCards;
+               
+               // 全てのカードからmainクラスを削除
+               allCards.forEach(card => card.classList.remove('main'));
+               
+               // 現在のカードにmainクラスを追加
+               allCards[currentIndex].classList.add('main');
+               
+               // スライダーを移動
+               const offset = allCards[currentIndex].offsetLeft;
+               slider.style.transform = `translateX(-${offset}px)`;
+        
+               // 中央セットの最後に達したら最初のセットに瞬間移動
+               const cardSetSize = cards.length;
+               if (currentIndex >= cardSetSize * 2) {
+                   setTimeout(() => {
+                       slider.style.transition = 'none';
+                       currentIndex = currentIndex % cardSetSize;
+                       const newOffset = allCards[currentIndex].offsetLeft;
+                       slider.style.transform = `translateX(-${newOffset}px)`;
+                       setTimeout(() => {
+                           slider.style.transition = 'transform 0.3s ease';
+                       }, 50);
+                   }, 300);
+               }
+           }
+        
+           prevBtn.addEventListener('click', () => updateSlider(-1));
+           nextBtn.addEventListener('click', () => updateSlider(1));
+        
+           // スライダーの初期化を実行
+           initializeSlider();
+        });
+        </script>
 </body>
 </html>

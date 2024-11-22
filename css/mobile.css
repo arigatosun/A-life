@@ -8,10 +8,41 @@
 
 /* 1120px以下での調整 */
 @media screen and (max-width: 1120px) {
+    .recruit-white-box {
+        width: 600px;
+        height: 70px;
+        top: 400px;
+        left: 40px;
+    }
+
+    .recruit-overlay-text {
+        top: 350px;
+        left: 40px;
+    }
+
+    .recruit-overlay-text p {
+        font-size: 40px;
+        line-height: 80px;
+        letter-spacing: 16px;
+    }
+
+    .recruit-detail-btn {
+        position: relative;
+        left: 40px;
+        margin-top: 500px;
+        width: 300px;
+    }
     .service-image {
         width: calc(60vw - 150px);
         left: 500px; /* 左位置の調整 */
     }
+
+    .reason-image {
+        width: 60%; /* 画面幅の60%に */
+        height: auto;
+        max-width: 800px; /* 最大幅を設定 */
+    }
+
 }
 
 /* 945px以下での調整 */
@@ -225,7 +256,7 @@
     }
 
     .section-subtitle {
-        bottom: 0px; /* タブレット用の調整 */
+        bottom: -6px; /* タブレット用の調整 */
         left: 4px;
     }
     
@@ -326,6 +357,7 @@
         line-height: normal;
         letter-spacing: -1.52px;
         text-transform: uppercase;
+        
     }
 
     .section-subtitle {
@@ -541,6 +573,235 @@
         order: 2;
     }
 
+    .works .section-title {
+        color: #797979;
+        font-family: Afacad;
+        font-size: 76px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -1.52px;
+        text-transform: uppercase;
+        padding-left: 20px;
+    }
+
+    /* 施工事例サブタイトルの調整 */
+    .works .section-subtitle {
+        color: #5E5E5E;
+        font-family: "Noto Sans JP";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px;
+        letter-spacing: 2.24px;
+        padding-left: 20px;
+    }
+
+    /* ロゴ画像のサイズ調整 */
+    .works-logo {
+        width: 220px;
+        height: 227.676px;
+        flex-shrink: 0;
+        /* 既存の位置指定はそのまま維持 */
+        top: 36px;
+        right: -33px;
+    }
+
+    .works{
+        padding-left: 0px;
+        margin-top: 0px;
+    }
+
+    .column {
+        padding-left: 0;
+        margin-top: 0;
+    }
+
+    .column .section-title {
+        padding-left: 20px;
+    }
+
+    .column .section-subtitle {
+        padding-left: 20px;
+    }
+
+
+
+    .recruit {
+        padding-left: 0;
+        margin-top: 0;
+        position: relative;
+        height: 600px; /* セクションの高さを固定 */
+    }
+
+    /* 説明文を非表示に */
+.recruit-description {
+    display: none;
+}
+
+    .recruit .section-title {
+        color: #797979;
+        font-family: Afacad;
+        font-size: 76px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -1.52px;
+        text-transform: uppercase;
+        padding-left: 20px;
+    }
+
+    .recruit .section-subtitle {
+        color: #5E5E5E;
+        font-family: "Noto Sans JP";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px;
+        padding-left: 20px;
+        letter-spacing: 0.5em;
+        margin-top:10px;
+    }
+
+    .recruit-description {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 2.8px;
+        padding: 0 24px;
+    }
+
+    .recruit-description br {
+        display: none; /* モバイル表示時は改行を解除 */
+    }
+
+    /* リクルートセクションの調整 */
+    .recruit-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-top: 100px; /* タイトルの下に配置 */
+        object-fit: cover;
+    }
+
+/* リクルートの白いボックスの調整 */
+.recruit-white-box {
+    position: absolute;
+    top: 310px;  /* モバイルでの位置調整 */
+    left: 24px;  /* 左のパディングに合わせる */
+    width: 340px; /* モバイルでの幅 */
+    height: 50px; /* モバイルでの高さ */
+}
+
+/* オーバーレイテキストの調整 */
+.recruit-overlay-text {
+    position: absolute;
+    top: 250px;  /* モバイルでの位置調整 */
+    left: 24px;  /* 左のパディングに合わせる */
+    z-index: 2;
+}
+
+.recruit-overlay-text p {
+    font-size: 28px;  /* モバイルでのフォントサイズ */
+    line-height: 55px;
+    letter-spacing: 12.8px;
+}
+
+
+
+.recruit-image {
+    display: none; /* デスクトップ用画像を非表示 */
+}
+
+.recruit-image-mobile {
+    display: block; /* モバイル用画像を表示 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 173px;
+        width: 75%;
+        height: 60%;
+    z-index: 1;
+}
+
+.recruit-detail-btn {
+    position: absolute;
+    top: auto;  /* 位置を自動調整 */
+    left: 50%;  /* 中央揃えのため */
+    transform: translateX(-50%);  /* 中央揃えのため */
+    margin: 0;
+    bottom: 40px;  /* 下からの位置調整 */
+    width: 260px;  /* モバイル用の幅 */
+    z-index: 3;  /* 画像の上に表示 */
+}
+
+.recruit-btn-desktop {
+    display: none;  /* デスクトップ用画像を非表示 */
+}
+
+.recruit-btn-mobile {
+    display: block;  /* モバイル用画像を表示 */
+    width: 100%;
+    height: auto;
+}
+
+.recruit-overlay-text,
+.recruit-white-box {
+    display: none;
+}
+
+.recruit-mobile-content {
+    display: block;
+    position: relative;
+}
+
+.recruit-mobile-overlay-text {
+    position: absolute;
+    top: 92px;
+    left: 74px;
+    z-index: 3;
+}
+
+.recruit-mobile-overlay-text p {
+    color: #797979;
+    font-family: "Noto Serif JP";
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 55px;
+    letter-spacing: 12.8px;
+    margin: 0;
+}
+
+.recruit-mobile-overlay-text .main-copy {
+    color: #475C71;
+}
+
+/* モバイル版の白いボックスのスタイル */
+.recruit-mobile-white-box {
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    background: #FFFFFF;
+    z-index: 2;
+    margin-top: 85px;
+    margin-left:60px;
+}
+
+/* 各白いボックスの位置を調整 */
+.recruit-mobile-white-box:nth-of-type(1) {
+    top: 310px; /* テキストの後ろに配置 */
+    left: 24px;
+}
+
+.recruit-mobile-white-box:nth-of-type(2) {
+    top: 370px;
+    left: 24px;
+}
+
+.recruit-mobile-white-box:nth-of-type(3) {
+    top: 430px;
+    left: 24px;
 
 
 }

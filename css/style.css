@@ -459,7 +459,6 @@ main {
     width: 100%;
     height: 648px; /* ギャラリーの高さを固定 */
     padding-right: 100px;
-    margin-bottom:300px;
 }
 
 .gallery-main {
@@ -486,3 +485,233 @@ main {
     width: 33.33%; /* 3列グリッド */
     height: 50%; /* 2行グリッド */
 }
+
+.column {
+    padding-left: 110px;
+    position: relative;
+    margin-top: 100px;
+}
+
+
+.column-slider {
+    position: relative;
+    margin-top: -230px;
+    overflow: hidden; /* visible に変更 */
+    padding-left: 940px;
+}
+
+.slider-arrow:hover {
+    opacity: 0.8;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 15%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.slider-arrow.prev { left: 831px; }
+.slider-arrow.next { right: 160px; }
+
+.column-articles {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.column-card {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 上揃えに変更 */
+    height: 650px; /* 既存の高さを維持 */
+    overflow: hidden; /* 追加 */
+}
+
+.column-card.main .column-image {
+    width: 628px;
+    height: 476px;
+    display: block;
+    overflow: hidden;
+}
+
+.column-card .column-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.column-card:not(.main) .column-image {
+    width: 625px;
+    height: 292px;
+}
+
+.column-content {
+    margin-top: 0px;
+    padding-top:20px;
+    padding-left:20px;
+    padding-bottom:20px;
+    background-color: #EDF1F2;
+}
+
+.column-title {
+    color: #6B7988;
+    font-family: "Noto Sans JP";
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 4.4px;
+    margin-bottom: 15px;
+}
+
+.column-text {
+    color: #6B7988;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+    margin-bottom: 15px;
+}
+
+.column-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.column-date {
+    color: #6B7988;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 3.2px;
+}
+
+.column-category {
+    display: inline-block;
+    width: 156px;
+    height: 23px;
+    background: rgba(107, 121, 136, 0.3);
+    color: #FFF;
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 3.2px;
+    line-height: 23px;
+}
+
+.recruit {
+    padding-left: 110px;
+    position: relative;
+    margin-top: 100px;
+}
+
+.recruit-description {
+    color: #5E5E5E;
+    font-family: "Noto Sans JP";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 3.6px;
+    margin-top: 24px;
+}
+
+.recruit-image {
+    position: absolute;
+    left: 0;
+    margin-top: 56px; /* 説明文との間隔 */
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+
+.recruit-overlay-text {
+    position: absolute;
+    top: 509px;
+    left: 885px;
+    z-index: 2;
+}
+
+.recruit-overlay-text p {
+    color: #797979;
+    font-family: "Noto Serif JP";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110px;
+    letter-spacing: 25.6px;
+    margin: 0;
+}
+
+.recruit-overlay-text .main-copy {
+    color: #475C71;
+}
+
+.recruit-white-box {
+    position: absolute;
+    top: 624px;  /* メインコピーの位置に合わせて調整 */
+    left: 860px; /* メインコピーの位置に合わせて調整 */
+    width: 817px;
+    height: 103px;
+    background: #FFFFFF;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+/* z-indexの順序を調整 */
+.recruit-overlay-text {
+    position: absolute;
+    top: 509px;
+    left: 885px;
+    z-index: 2; /* 白色ラベルの上に表示 */
+}
+
+.recruit-detail-btn {
+    position: absolute;
+    top: 780px;  /* オーバーレイテキストの下に配置 */
+    left: 885px; /* オーバーレイテキストに合わせる */
+    z-index: 3;
+    transition: opacity 0.3s ease; /* ホバーアニメーション */
+    display: block;
+    margin-top: 90px;
+    margin-left: 64px;
+}
+
+.recruit-detail-btn img {
+    width: auto;
+    height: auto;
+    margin-bottom:64px;
+}
+
+/* ホバーエフェクト */
+.recruit-detail-btn:hover {
+    opacity: 0.8;
+}
+
+/* モバイル用の画像を追加 */
+.recruit-image-mobile {
+    display: none;
+}
+
+.recruit-btn-desktop {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.recruit-btn-mobile {
+    display: none;
+}
+
+.recruit-mobile-content {
+    display: none;
+}
+
+
+
